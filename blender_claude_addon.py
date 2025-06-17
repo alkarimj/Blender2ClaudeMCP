@@ -87,9 +87,9 @@ class CLAUDE_PT_MCPPanel(bpy.types.Panel):
         layout.prop(props, "response", text="")
 
 class ClaudeMCPProperties(bpy.types.PropertyGroup):
-    prompt: bpy.props.StringProperty(name="Prompt", description="Prompt for Claude", default="")
-    script: bpy.props.StringProperty(name="Script", description="Python script to run", default="", subtype='TEXT')
-    response: bpy.props.StringProperty(name="Response", description="Response from Claude", default="")
+    prompt = bpy.props.StringProperty(name="Prompt", description="Prompt for Claude", default="")
+    script = bpy.props.StringProperty(name="Script", description="Python script to run", default="")
+    response = bpy.props.StringProperty(name="Response", description="Response from Claude", default="")
 
 class CLAUDE_OT_CopyPrompt(bpy.types.Operator):
     bl_idname = "claude.copy_prompt"
