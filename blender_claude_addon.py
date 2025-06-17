@@ -79,10 +79,11 @@ class CLAUDE_PT_MCPPanel(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
         props = context.scene.claude_mcp_props
-        layout.prop(props, "prompt")
+
+        layout.prop(props, "prompt", text="Prompt")
         layout.operator("claude.copy_prompt", icon='COPYDOWN')
-        layout.prop(props, "script")
-        layout.operator("claude.run_script", icon='PLAY')
+        layout.prop(props, "script", text="Script")
+        layout.operator("claude.run_script", text="Submit Prompt", icon='PLAY')
         layout.label(text="Response:")
         layout.prop(props, "response", text="")
 
