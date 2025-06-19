@@ -82,8 +82,8 @@ class CLAUDE_PT_MCPPanel(bpy.types.Panel):
 
         layout.label(text=f"Status: {props.connection_status}")
         layout.prop(props, "prompt", text="Prompt")
-        layout.operator("claude.send_prompt", icon='FORWARD')
         layout.prop(props, "script", text="Script")
+        layout.operator("claude.send_prompt", icon='FORWARD')
         layout.operator("claude.run_script", icon='PLAY')
         layout.separator()
         layout.operator("claude.create_cube", icon='MESH_CUBE')
@@ -95,7 +95,7 @@ class CLAUDE_PT_MCPPanel(bpy.types.Panel):
             box.label(text=entry.message)
 
 class ClaudeMCPLogEntry(bpy.types.PropertyGroup):
-    message: bpy.props.StringProperty()
+    message = bpy.props.StringProperty()
 
 class ClaudeMCPProperties(bpy.types.PropertyGroup):
     prompt = bpy.props.StringProperty(name="Prompt", description="Prompt for Claude", default="")
